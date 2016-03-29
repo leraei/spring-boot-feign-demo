@@ -15,8 +15,9 @@
   </parent>
 
   <modules>
+    <module>rest-api</module>
+    <module>rest-api-commons</module>
     <module>feign-client</module>
     <module>rest-server</module>
-    <module>rest-api</module>
   </modules>
 </project>
