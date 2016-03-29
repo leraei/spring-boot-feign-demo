@@ -1,9 +1,9 @@
 package de.fiebiger;
 
-import de.fiebiger.v1.response.UserResponse;
-import de.fiebiger.exception.NotFoundException;
 import de.fiebiger.v1.request.UserRequest;
+import de.fiebiger.v1.response.UserResponse;
 import de.fiebiger.v1.service.FeignRestService;
+import de.fiebiger.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
