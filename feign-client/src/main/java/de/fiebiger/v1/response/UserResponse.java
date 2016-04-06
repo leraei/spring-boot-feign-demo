@@ -55,11 +55,11 @@ public class UserResponse {
 	}
 
 
-//	@Override public String toString() {
-//		return "UserResponse{" +
-//				"id='" + id + '\'' +
-//				", emailAddress='" + emailAddress + '\'' +
-//				", password='" + password + '\'' +
-//				'}';
-//	}
+	@Override public String toString() {
+		return "UserResponse{" +
+				"id='" + id + '\'' +
+				", emailAddress='" + emailAddress + '\'' +
+				", password='" + password + '\'' +
+				'}';
+	}
 }
