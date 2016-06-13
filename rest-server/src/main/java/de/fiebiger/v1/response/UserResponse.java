@@ -11,6 +11,7 @@ public class UserResponse {
 	private String id;
 	private String emailAddress;
 	private String password;
+	private String additionalField;
 
 
 	public UserResponse() {
@@ -55,11 +56,22 @@ public class UserResponse {
 	}
 
 
-//	@Override public String toString() {
-//		return "UserResponse{" +
-//				"id='" + id + '\'' +
-//				", emailAddress='" + emailAddress + '\'' +
-//				", password='" + password + '\'' +
-//				'}';
-//	}
+	public String getAdditionalField() {
+		return additionalField;
+	}
+
+
+	public void setAdditionalField(String additionalField) {
+		this.additionalField = additionalField;
+	}
+
+
+	@Override public String toString() {
+		return "UserResponse{" +
+				"id='" + id + '\'' +
+				", emailAddress='" + emailAddress + '\'' +
+				", password='" + password + '\'' +
+				", additionalField='" + additionalField + '\'' +
+				'}';
+	}
 }

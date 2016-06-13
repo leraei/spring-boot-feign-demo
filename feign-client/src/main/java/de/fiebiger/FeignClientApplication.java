@@ -1,9 +1,9 @@
 package de.fiebiger;
 
+import de.fiebiger.exception.NotFoundException;
 import de.fiebiger.v1.request.UserRequest;
 import de.fiebiger.v1.response.UserResponse;
 import de.fiebiger.v1.service.FeignRestService;
-import de.fiebiger.exception.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -43,7 +43,7 @@ public class FeignClientApplication {
 	 *
 	 * @return the response from rest-service method create
 	 */
-	@RequestMapping("/user")
+	@RequestMapping("/users")
 	public String createUser() {
 		ResponseEntity<UserResponse> responseEntity = feignRestClient.createUser(new UserRequest("test@example.com", "password123"));
 		return responseEntity.getBody().toString();
@@ -55,14 +55,14 @@ public class FeignClientApplication {
 	 *
 	 * @return the response from rest-service method findById
 	 */
-	@RequestMapping(value = "/user/{userAccountId}", method = RequestMethod.GET)
+	@RequestMapping(value = "/users/{userAccountId}", method = RequestMethod.GET)
 	public String findById(@PathVariable("userAccountId") String userAccountId) {
 		try {
 			ResponseEntity<UserResponse> responseEntity = feignRestClient.findById(userAccountId);
 			return responseEntity.getBody().toString();
 		}
 		catch (NotFoundException nfe) {
-			return nfe.getHttpStatusCode() + "\t" + nfe.getMessage();
+			return "Custom Response: " + nfe.getHttpStatusCode() + "\t" + nfe.getMessage();
 		}
 	}
 

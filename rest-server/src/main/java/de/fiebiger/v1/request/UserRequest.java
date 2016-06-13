@@ -6,11 +6,23 @@ package de.fiebiger.v1.request;
 public class UserRequest {
 	private String email;
 	private String password;
+	private String optionalParameter;
+
 
 
 	public UserRequest(String email, String password) {
 		this.email = email;
 		this.password = password;
+	}
+
+
+	public String getOptionalParameter() {
+		return optionalParameter;
+	}
+
+
+	public void setOptionalParameter(String optionalParameter) {
+		this.optionalParameter = optionalParameter;
 	}
 
 

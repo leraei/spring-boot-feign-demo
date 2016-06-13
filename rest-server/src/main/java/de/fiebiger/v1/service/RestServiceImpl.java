@@ -31,6 +31,7 @@ public class RestServiceImpl implements RestService {
 	@Override
 	public ResponseEntity<UserResponse> createUser(@RequestBody @Valid UserRequest userRequest) {
 		UserResponse userResponse = new UserResponse(userRequest.getEmail(), userRequest.getPassword());
+		userResponse.setAdditionalField("Additional!");
 		users.put(userResponse.getId(), userResponse);
 		return new ResponseEntity<UserResponse>(userResponse, HttpStatus.CREATED);
 	}
